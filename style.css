@@ -31,3 +31,174 @@ body {
 }
 
 /* ----- zde začni psát vlastní CSS ----- */
+
+:root {
+  --grey: #e5e5e5;
+  --violetlight: #48418e;
+  --violetdark: #25133d;
+  --white:#FFFFFF;
+}
+
+header {
+ /* padding-top: 1rem;
+  padding-bottom: 1rem;*/
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo{
+  color: var(--violetlight);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: left;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+header p {
+  color: var(--violetlight);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+header p:hover {
+  background-color: var(--violetlight);
+  color: var(--white);
+}
+
+.kontejner {
+  background-image: url(images/pozadi.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  padding-top: 1rem;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.popis {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.download,
+.info {
+  color: var(--white);
+  padding: 1rem;
+  border: 1px solid var(--white);
+  font: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  border-radius: 12px;
+  width: 350px;
+}
+
+.download {
+background-color: var(--violetlight);
+margin-bottom: 1rem;
+}
+
+.download:hover {
+background: none;
+}
+
+.info {
+background: none;
+}
+
+.info:hover {
+  background-color:var(--violetlight);
+}
+
+.ikony {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ikony p {
+  text-align: center;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+h2 {
+  color: var(--violetlight);
+}
+
+footer {
+  padding: 0.5rem;
+  color: var(--white);
+  text-align: center;
+  background-color: var(--violetdark);
+}
+
+
+
+
+@media only screen and (min-width: 480px) {
+
+header {
+  justify-content: flex-start;
+}
+
+.kontejner {
+  align-items: flex-start;
+}
+
+.buttons {
+ flex-direction: row;
+}
+
+.download,
+.info {
+  width: 200px;
+}
+
+.download {
+ margin-right: 2rem; 
+}
+
+.ikony {
+display: flex;
+flex-direction: row;
+}
+
+
+}
+
+ @media only screen and (min-width: 860px){
+
+
+.kontejner {
+  position: relative;
+}
+ .kontejner img {
+position: absolute;
+right: 0;
+bottom: 0;
+ }
+
+h1 {
+  font-size: 4rem;
+}
+
+.popis {
+  font-size: 2.5rem;
+}
+}

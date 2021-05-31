@@ -24,7 +24,7 @@ body {
 }
 
 .obal {
-    width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
+    max-width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
     margin: 0 auto; /* pruh je na stránce vycentrovaný */
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -39,50 +39,65 @@ body {
   --white:#FFFFFF;
 }
 
-header {
- /* padding-top: 1rem;
-  padding-bottom: 1rem;*/
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
+/*menu*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.logo{
-  color: var(--violetlight);
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 
+}
+
+header {
+text-align: center;
+}
+
+.logo {
   font-weight: 700;
   font-size: 1rem;
-  text-align: left;
-  margin-left: 2rem;
-  margin-right: 1rem;
 }
 
-header p {
+.polozka,
+.logo {
   color: var(--violetlight);
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0;
+  padding: 1rem;
+  width: 50%;
 }
 
-header p:hover {
+header li:hover {
   background-color: var(--violetlight);
   color: var(--white);
+  margin-left: -1rem;
 }
+
+/*banner s tlačítky*/
 
 .kontejner {
   background-image: url(images/pozadi.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: var(--violetdark);
   padding: 2rem;
-  padding-top: 1rem;  
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+}
+
+.kontejner img {
+  display: none;
 }
 
 h1 {
   color: var(--white);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 0;
 }
 
 .popis {
@@ -101,10 +116,8 @@ h1 {
   color: var(--white);
   padding: 1rem;
   border: 1px solid var(--white);
-  font: "Source Sans Pro", sans-serif;
-  font-weight: 400;
   border-radius: 12px;
-  width: 350px;
+  width: 250px;
 }
 
 .download {
@@ -124,41 +137,71 @@ background: none;
   background-color:var(--violetlight);
 }
 
+/*část s ikonami*/
+
 .ikony {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .ikony p {
   text-align: center;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.ikony img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
   color: var(--violetlight);
+  text-align: center;
 }
 
+/*zápatí*/
+
 footer {
-  padding: 0.5rem;
+  padding: 0.1rem;
   color: var(--white);
-  text-align: center;
   background-color: var(--violetdark);
 }
 
+footer p {
+  margin-left:1rem;
+}
 
+/*tablet*/
+@media screen and (min-width: 480px) {
 
-
-@media only screen and (min-width: 480px) {
+/*menu*/
+header ul {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  
+  }
 
 header {
-  justify-content: flex-start;
+  text-align: left;
+  margin-left: 1rem;
 }
+
+/*banner s tlačítky*/
 
 .kontejner {
   align-items: flex-start;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.popis {
+  max-width: 700px;
+  font-size: 2.2rem;
 }
 
 .buttons {
@@ -172,33 +215,66 @@ header {
 
 .download {
  margin-right: 2rem; 
+ margin-bottom: 0;
 }
 
 .ikony {
-display: flex;
 flex-direction: row;
 }
 
+/*část s ikonami*/
+
+.ikony p {
+  margin-bottom: 2rem;
+}
+
+.ikona {
+  display: flex;
+  flex-direction: column;
+}
+
+.ikona_nadpis {
+  order: 1;
+}
+
+.obrazek {
+order: 0;
+margin-top: 2rem;
+}
+
+.ikona p {
+  order: 2; 
+}
+
+/*zápatí*/
+footer {
+  text-align: center;
+}
 
 }
 
- @media only screen and (min-width: 860px){
+/*desktop*/
+@media screen and (min-width: 860px){
 
+  .logo,
+  .polozka {
+    min-width: 160px;
+  }
 
 .kontejner {
   position: relative;
+  padding-top: 0;
 }
+
  .kontejner img {
-position: absolute;
-right: 0;
-bottom: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
  }
 
-h1 {
-  font-size: 4rem;
-}
+ .popis {
+  max-width: 450px;
+ }
 
-.popis {
-  font-size: 2.5rem;
-}
 }
